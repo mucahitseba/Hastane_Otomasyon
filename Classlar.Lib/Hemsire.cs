@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Classlar.Lib
 {
-   public class Hemsire
+   public class Hemsire:Calısan
     {
-        public Branslar brans { get; set; }
+       
+        public Branslar Brans
+        {
+            get;set;
+        }
     }
 }

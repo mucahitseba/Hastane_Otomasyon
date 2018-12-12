@@ -69,6 +69,7 @@
             this.hemşireToolStripMenuItem1.Name = "hemşireToolStripMenuItem1";
             this.hemşireToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
             this.hemşireToolStripMenuItem1.Text = "Hemşire";
+            this.hemşireToolStripMenuItem1.Click += new System.EventHandler(this.hemşireToolStripMenuItem1_Click);
             // 
             // personelToolStripMenuItem1
             // 

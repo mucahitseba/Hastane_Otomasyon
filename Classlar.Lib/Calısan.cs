@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classlar.Lib
 {
-    public class Calısan : Kisi, IMaasAlan
+    public class Calısan : Kisi,IMaasAlan
     {
         public decimal SaatlikUcret { set => throw new NotImplementedException(); }
 
@@ -21,5 +21,6 @@ namespace Classlar.Lib
         {
             throw new NotImplementedException();
         }
+        
     }
 }

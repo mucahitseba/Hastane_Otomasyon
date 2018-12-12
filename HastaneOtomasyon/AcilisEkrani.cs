@@ -55,5 +55,16 @@ namespace HastaneOtomasyon
                 randevuEkrani.Show();
             }
         }
+
+        private void hemşireToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (hemsireEkrani == null || hemsireEkrani.IsDisposed)
+            {
+                hemsireEkrani = new HemsireEkrani();
+                hemsireEkrani.MdiParent = this;
+                hemsireEkrani.Dock = DockStyle.Fill;
+                hemsireEkrani.Show();
+            }
+        }
     }
 }

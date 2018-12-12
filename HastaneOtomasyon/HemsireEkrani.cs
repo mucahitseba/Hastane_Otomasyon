@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Classlar.Lib;
 
 namespace HastaneOtomasyon
 {
@@ -15,6 +16,32 @@ namespace HastaneOtomasyon
         public HemsireEkrani()
         {
             InitializeComponent();
+        }
+        List<Hemsire> hemsireler = new List<Hemsire>();
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            Hemsire yeniHemsire = new Hemsire();
+            try
+            {
+                yeniHemsire.Ad = txtAd.Text;
+                yeniHemsire.Soyad = txtSoyad.Text;
+                yeniHemsire.Email = txtEmail.Text;
+                yeniHemsire.Telefon = txtTelefon.Text;
+                yeniHemsire.TCKN = txtTckn.Text;
+                hemsireler.Add(yeniHemsire);
+                //MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
+                
+                lstKisiler.Items.AddRange(hemsireler.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void HemsireEkrani_Load(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = Enum.GetValues(typeof(Branslar));
         }
     }
 }
