@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Classlar.Lib
 {
     public enum Branslar:byte
-    {
+    {     
         KBB,
         Ortopedi,
         Dahiliye,

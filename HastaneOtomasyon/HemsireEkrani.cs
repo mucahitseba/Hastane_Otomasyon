@@ -29,7 +29,8 @@ namespace HastaneOtomasyon
                 yeniHemsire.Telefon = txtTelefon.Text;
                 yeniHemsire.TCKN = txtTckn.Text;
                 hemsireler.Add(yeniHemsire);
-                //MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
+                
+                
                 
                 lstKisiler.Items.AddRange(hemsireler.ToArray());
             }
@@ -43,5 +44,6 @@ namespace HastaneOtomasyon
         {
             comboBox1.DataSource = Enum.GetValues(typeof(Branslar));
         }
+
     }
 }

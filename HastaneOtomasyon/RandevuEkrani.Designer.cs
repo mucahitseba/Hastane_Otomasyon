@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbServis = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbServis);
             this.panel1.Location = new System.Drawing.Point(264, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 290);
@@ -315,13 +315,13 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 0;
             // 
-            // comboBox1
+            // cmbServis
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmbServis.FormattingEnabled = true;
+            this.cmbServis.Location = new System.Drawing.Point(118, 13);
+            this.cmbServis.Name = "cmbServis";
+            this.cmbServis.Size = new System.Drawing.Size(121, 21);
+            this.cmbServis.TabIndex = 0;
             // 
             // listView1
             // 
@@ -341,6 +341,7 @@
             this.Controls.Add(this.lstHastalar);
             this.Name = "RandevuEkrani";
             this.Text = "Randevu Ekranı";
+            this.Load += new System.EventHandler(this.RandevuEkrani_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -351,7 +352,7 @@
         private System.Windows.Forms.ListBox lstHastalar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbServis;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button16;

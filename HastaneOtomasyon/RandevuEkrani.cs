@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classlar.Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace HastaneOtomasyon
         {
             InitializeComponent();
         }
-
+        
         private DoktorEkrani doktorEkrani;
 
         private void hemşireToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,6 +35,11 @@ namespace HastaneOtomasyon
                 doktorEkrani.Show();
             }
 
+        }
+
+        private void RandevuEkrani_Load(object sender, EventArgs e)
+        {
+            cmbServis.DataSource = Enum.GetValues(typeof(Branslar));
         }
     }
 }

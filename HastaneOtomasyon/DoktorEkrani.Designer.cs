@@ -98,6 +98,7 @@
             this.lstKisiler.Name = "lstKisiler";
             this.lstKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstKisiler.TabIndex = 67;
+            this.lstKisiler.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
             // 
             // btnKaydet
             // 
@@ -232,6 +233,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DoktorEkrani";
             this.Text = "DoktorEkrani";
+            this.Load += new System.EventHandler(this.DoktorEkrani_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
