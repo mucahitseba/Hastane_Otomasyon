@@ -44,14 +44,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DoktorEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DoktorEkrani.Designer.cs">
+      <DependentUpon>DoktorEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HastaEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HastaEkrani.Designer.cs">
+      <DependentUpon>HastaEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HemsireEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HemsireEkrani.Designer.cs">
+      <DependentUpon>HemsireEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelEkrani.Designer.cs">
+      <DependentUpon>PersonelEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RandevuEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandevuEkrani.Designer.cs">
+      <DependentUpon>RandevuEkrani.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="RandevuEkrani.resx">
+      <DependentUpon>RandevuEkrani.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
