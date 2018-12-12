@@ -18,6 +18,9 @@ namespace HastaneOtomasyon
             InitializeComponent();
         }
         List<Hemsire> hemsireler = new List<Hemsire>();
+        List<Hemsire> aramalar = new List<Hemsire>();
+        Branslar brans=new Branslar();
+        
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Hemsire yeniHemsire = new Hemsire();
@@ -28,10 +31,13 @@ namespace HastaneOtomasyon
                 yeniHemsire.Email = txtEmail.Text;
                 yeniHemsire.Telefon = txtTelefon.Text;
                 yeniHemsire.TCKN = txtTckn.Text;
+                yeniHemsire.brans = (Branslar)comboBox1.SelectedItem;
                 hemsireler.Add(yeniHemsire);
                 
                 
                 
+                MessageBox.Show($"Hosgeldin {yeniHemsire.Ad} {yeniHemsire.Soyad}{yeniHemsire.brans}");
+                FormuTemizle();
                 lstKisiler.Items.AddRange(hemsireler.ToArray());
             }
             catch (Exception ex)
@@ -44,6 +50,5 @@ namespace HastaneOtomasyon
         {
             comboBox1.DataSource = Enum.GetValues(typeof(Branslar));
         }
-
     }
 }
