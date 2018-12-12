@@ -16,5 +16,10 @@ namespace HastaneOtomasyon
         {
             InitializeComponent();
         }
+
+        private void HastaEkrani_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace HastaneOtomasyon
         {
             InitializeComponent();
         }
+
+        private void hemşireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

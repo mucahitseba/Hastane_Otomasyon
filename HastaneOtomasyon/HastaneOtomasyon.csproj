@@ -76,6 +76,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DoktorEkrani.resx">
+      <DependentUpon>DoktorEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HastaEkrani.resx">
+      <DependentUpon>HastaEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HemsireEkrani.resx">
+      <DependentUpon>HemsireEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelEkrani.resx">
+      <DependentUpon>PersonelEkrani.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RandevuEkrani.resx">
       <DependentUpon>RandevuEkrani.cs</DependentUpon>
     </EmbeddedResource>
