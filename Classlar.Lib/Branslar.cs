@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classlar.Lib
 {
-    public enum Branslar
+    public enum Branslar:byte
     {
         KBB,
         Ortopedi,
@@ -17,7 +17,7 @@ namespace Classlar.Lib
         KadınDoğum,
         BeyinCerrahi
     }
-    public enum Gorevler
+    public enum Gorevler:byte
     {
         Temizlik,
         Muhasebe,

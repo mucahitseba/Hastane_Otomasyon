@@ -55,6 +55,7 @@
             this.button1.TabIndex = 53;
             this.button1.Text = "Sil";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnGuncelle
             // 
@@ -88,6 +89,7 @@
             this.btnKaydet.TabIndex = 49;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtTckn
             // 
@@ -210,6 +212,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PersonelEkrani";
             this.Text = "PersonelEkrani";
+            this.Load += new System.EventHandler(this.PersonelEkrani_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
