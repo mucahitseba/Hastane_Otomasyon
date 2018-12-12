@@ -122,5 +122,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Classlar.Lib\Classlar.Lib.csproj">
+      <Project>{94f9b9a6-ee7a-4047-b126-f25ff9dbe7be}</Project>
+      <Name>Classlar.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

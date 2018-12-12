@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HastaneOtomasyon", "HastaneOtomasyon\HastaneOtomasyon.csproj", "{90B72679-8793-4D63-9D5A-9EB42036BE71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classlar.Lib", "Classlar.Lib\Classlar.Lib.csproj", "{94F9B9A6-EE7A-4047-B126-F25FF9DBE7BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{90B72679-8793-4D63-9D5A-9EB42036BE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90B72679-8793-4D63-9D5A-9EB42036BE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90B72679-8793-4D63-9D5A-9EB42036BE71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F9B9A6-EE7A-4047-B126-F25FF9DBE7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F9B9A6-EE7A-4047-B126-F25FF9DBE7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F9B9A6-EE7A-4047-B126-F25FF9DBE7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F9B9A6-EE7A-4047-B126-F25FF9DBE7BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
