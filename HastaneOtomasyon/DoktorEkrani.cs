@@ -28,7 +28,7 @@ namespace HastaneOtomasyon
                 doktor.Soyad = txtSoyad.Text;
                 doktor.TCKN = txtTckn.Text;
                 doktor.Email = txtEmail.Text;
-                doktor
+                
             }
             catch (Exception)
             {

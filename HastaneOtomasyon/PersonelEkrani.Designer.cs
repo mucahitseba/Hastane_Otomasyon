@@ -89,7 +89,7 @@
             this.btnKaydet.TabIndex = 49;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+
             // 
             // txtTckn
             // 
@@ -212,7 +212,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PersonelEkrani";
             this.Text = "PersonelEkrani";
-            this.Load += new System.EventHandler(this.PersonelEkrani_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
