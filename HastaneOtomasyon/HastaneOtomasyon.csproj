@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcilisEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcilisEkrani.Designer.cs">
+      <DependentUpon>AcilisEkrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoktorEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AcilisEkrani.resx">
+      <DependentUpon>AcilisEkrani.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoktorEkrani.resx">
       <DependentUpon>DoktorEkrani.cs</DependentUpon>
     </EmbeddedResource>

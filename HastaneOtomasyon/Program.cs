@@ -16,7 +16,7 @@ namespace HastaneOtomasyon
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RandevuEkrani());
+            Application.Run(new AcilisEkrani());
         }
     }
 }

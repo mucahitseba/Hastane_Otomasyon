@@ -17,8 +17,22 @@ namespace HastaneOtomasyon
             InitializeComponent();
         }
 
+        private DoktorEkrani doktorEkrani;
+
         private void hemşireToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void doktorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (doktorEkrani == null || doktorEkrani.IsDisposed)
+            {
+                doktorEkrani = new DoktorEkrani();
+                doktorEkrani.MdiParent = this;
+                doktorEkrani.Show();
+            }
 
         }
     }
