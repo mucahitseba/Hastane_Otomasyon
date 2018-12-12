@@ -191,7 +191,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(86, 179);
+            this.comboBox2.Location = new System.Drawing.Point(78, 186);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(135, 21);
             this.comboBox2.TabIndex = 74;
@@ -199,7 +199,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 182);
+            this.label7.Location = new System.Drawing.Point(27, 189);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 73;
