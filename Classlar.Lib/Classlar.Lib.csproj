@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Branslar.cs" />
+    <Compile Include="Hasta.cs" />
+    <Compile Include="Hemsire.cs" />
     <Compile Include="Calısan.cs" />
     <Compile Include="Doktor.cs" />
     <Compile Include="IMaasAlan.cs" />
