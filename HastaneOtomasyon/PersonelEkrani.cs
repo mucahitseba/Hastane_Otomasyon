@@ -17,12 +17,7 @@ namespace HastaneOtomasyon
             InitializeComponent();
         }
 
-        private void PersonelEkrani_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnKaydet_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

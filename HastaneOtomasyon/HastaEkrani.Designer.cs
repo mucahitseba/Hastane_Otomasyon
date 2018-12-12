@@ -42,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGuncelle
@@ -53,6 +53,7 @@
             this.btnGuncelle.TabIndex = 37;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // txtAra
             // 
@@ -60,6 +61,7 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(196, 20);
             this.txtAra.TabIndex = 36;
+            this.txtAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAra_KeyUp);
             // 
             // lstKisiler
             // 
@@ -68,6 +70,7 @@
             this.lstKisiler.Name = "lstKisiler";
             this.lstKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstKisiler.TabIndex = 35;
+            this.lstKisiler.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
             // 
             // btnKaydet
             // 
@@ -159,21 +162,22 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Ad";
             // 
-            // button1
+            // btnSil
             // 
-            this.button1.Location = new System.Drawing.Point(19, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 37);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Sil";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSil.Location = new System.Drawing.Point(19, 191);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 37);
+            this.btnSil.TabIndex = 38;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // HastaEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 243);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.lstKisiler);
@@ -211,6 +215,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSil;
     }
 }
