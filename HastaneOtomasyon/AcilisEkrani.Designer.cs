@@ -33,6 +33,7 @@
             this.doktorToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.hemşireToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.personelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.randevuEkranıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             this.hastaToolStripMenuItem,
             this.doktorToolStripMenuItem2,
             this.hemşireToolStripMenuItem1,
-            this.personelToolStripMenuItem1});
+            this.personelToolStripMenuItem1,
+            this.randevuEkranıToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -74,6 +76,14 @@
             this.personelToolStripMenuItem1.Size = new System.Drawing.Size(64, 20);
             this.personelToolStripMenuItem1.Text = "Personel";
             // 
+            // randevuEkranıToolStripMenuItem
+            // 
+            this.randevuEkranıToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.randevuEkranıToolStripMenuItem.Name = "randevuEkranıToolStripMenuItem";
+            this.randevuEkranıToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.randevuEkranıToolStripMenuItem.Text = "Randevu Ekranı";
+            this.randevuEkranıToolStripMenuItem.Click += new System.EventHandler(this.randevuEkranıToolStripMenuItem_Click);
+            // 
             // AcilisEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,5 +109,6 @@
         private System.Windows.Forms.ToolStripMenuItem doktorToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem hemşireToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem personelToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem randevuEkranıToolStripMenuItem;
     }
 }

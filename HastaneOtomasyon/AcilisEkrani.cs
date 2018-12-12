@@ -17,6 +17,10 @@ namespace HastaneOtomasyon
             InitializeComponent();
         }
         private RandevuEkrani randevuEkrani;
+        private HastaEkrani hastaEkrani;
+        private DoktorEkrani doktorEkrani;
+        private PersonelEkrani personelEkrani;
+        private HemsireEkrani hemsireEkrani;
 
         private void AcilisEkrani_Load(object sender, EventArgs e)
         {
@@ -31,7 +35,25 @@ namespace HastaneOtomasyon
 
         private void hastaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (hastaEkrani == null || hastaEkrani.IsDisposed)
+            {
+                hastaEkrani = new HastaEkrani();
+                hastaEkrani.MdiParent = this;
+                hastaEkrani.Dock = DockStyle.Fill;
+                randevuEkrani.Close();
+                hastaEkrani.Show();
+            }
+        }
 
+        private void randevuEkranıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (randevuEkrani == null || randevuEkrani.IsDisposed)
+            {
+                randevuEkrani = new RandevuEkrani();
+                randevuEkrani.MdiParent = this;
+                randevuEkrani.Dock = DockStyle.Fill;
+                randevuEkrani.Show();
+            }
         }
     }
 }
