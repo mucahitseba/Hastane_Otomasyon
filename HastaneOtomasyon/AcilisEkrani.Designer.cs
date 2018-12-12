@@ -63,18 +63,21 @@
             this.doktorToolStripMenuItem2.Name = "doktorToolStripMenuItem2";
             this.doktorToolStripMenuItem2.Size = new System.Drawing.Size(55, 20);
             this.doktorToolStripMenuItem2.Text = "Doktor";
+            this.doktorToolStripMenuItem2.Click += new System.EventHandler(this.doktorToolStripMenuItem2_Click);
             // 
             // hemşireToolStripMenuItem1
             // 
             this.hemşireToolStripMenuItem1.Name = "hemşireToolStripMenuItem1";
             this.hemşireToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
             this.hemşireToolStripMenuItem1.Text = "Hemşire";
+            this.hemşireToolStripMenuItem1.Click += new System.EventHandler(this.hemşireToolStripMenuItem1_Click);
             // 
             // personelToolStripMenuItem1
             // 
             this.personelToolStripMenuItem1.Name = "personelToolStripMenuItem1";
             this.personelToolStripMenuItem1.Size = new System.Drawing.Size(64, 20);
             this.personelToolStripMenuItem1.Text = "Personel";
+            this.personelToolStripMenuItem1.Click += new System.EventHandler(this.personelToolStripMenuItem1_Click);
             // 
             // randevuEkranıToolStripMenuItem
             // 

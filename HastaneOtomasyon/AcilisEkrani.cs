@@ -55,5 +55,38 @@ namespace HastaneOtomasyon
                 randevuEkrani.Show();
             }
         }
+
+        private void hemşireToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (hemsireEkrani == null || hemsireEkrani.IsDisposed)
+            {
+                hemsireEkrani = new HemsireEkrani();
+                hemsireEkrani.MdiParent = this;
+                hemsireEkrani.Dock = DockStyle.Fill;
+                hemsireEkrani.Show();
+            }
+        }
+
+        private void doktorToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (doktorEkrani == null || doktorEkrani.IsDisposed)
+            {
+                doktorEkrani = new DoktorEkrani();
+                doktorEkrani.MdiParent = this;
+                doktorEkrani.Dock = DockStyle.Fill;
+                doktorEkrani.Show();
+            }
+        }
+
+        private void personelToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (personelEkrani == null || personelEkrani.IsDisposed)
+            {
+                personelEkrani = new PersonelEkrani();
+                personelEkrani.MdiParent = this;
+                personelEkrani.Dock = DockStyle.Fill;
+                personelEkrani.Show();
+            }
+        }
     }
 }

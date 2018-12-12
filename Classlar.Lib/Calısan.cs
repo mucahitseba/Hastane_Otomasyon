@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace Classlar.Lib
 {
-    public class Calısan : Kisi, IMaasAlan
+    public abstract class Calısan : Kisi, IMaasAlan
     {
+        private decimal _maas;
+        public decimal Maas
+        {
+            get => this._maas;
+
+            protected set
+            {
+                this._maas = value;
+            }
+        }
         public decimal SaatlikUcret { set => throw new NotImplementedException(); }
 
         public decimal Tutar => throw new NotImplementedException();

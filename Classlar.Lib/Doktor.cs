@@ -10,5 +10,12 @@ namespace Classlar.Lib
     {
         public Branslar Brans { get; set; }
 
+        public Hemsire Hemsire { get; set; }
+
+        public Doktor()
+        {
+            
+        }
+
     }
 }

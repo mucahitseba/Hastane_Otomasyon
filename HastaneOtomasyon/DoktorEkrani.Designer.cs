@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbBrans = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
@@ -45,17 +45,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbHemsire = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbBrans
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 147);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 72;
+            this.cbBrans.FormattingEnabled = true;
+            this.cbBrans.Location = new System.Drawing.Point(78, 147);
+            this.cbBrans.Name = "cbBrans";
+            this.cbBrans.Size = new System.Drawing.Size(135, 21);
+            this.cbBrans.TabIndex = 72;
             // 
             // label6
             // 
@@ -107,6 +107,7 @@
             this.btnKaydet.TabIndex = 66;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtTckn
             // 
@@ -188,13 +189,13 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Ad";
             // 
-            // comboBox2
+            // cbHemsire
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(78, 186);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(135, 21);
-            this.comboBox2.TabIndex = 74;
+            this.cbHemsire.FormattingEnabled = true;
+            this.cbHemsire.Location = new System.Drawing.Point(78, 186);
+            this.cbHemsire.Name = "cbHemsire";
+            this.cbHemsire.Size = new System.Drawing.Size(135, 21);
+            this.cbHemsire.TabIndex = 74;
             // 
             // label7
             // 
@@ -210,9 +211,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 344);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbHemsire);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbBrans);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuncelle);
@@ -238,7 +239,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbBrans;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuncelle;
@@ -255,7 +256,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbHemsire;
         private System.Windows.Forms.Label label7;
     }
 }
