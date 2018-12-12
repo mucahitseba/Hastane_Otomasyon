@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Branslar.cs" />
+    <Compile Include="Hasta.cs" />
+    <Compile Include="Hemsire.cs" />
     <Compile Include="Kisi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
