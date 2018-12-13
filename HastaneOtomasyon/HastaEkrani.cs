@@ -22,11 +22,11 @@ namespace HastaneOtomasyon
         {
 
         }
-        List<Kisi> hastalar = new List<Kisi>();
+        public static List<Kisi> hastalar = new List<Kisi>();
         List<Kisi> aramalar = new List<Kisi>();
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            Kisi yeniHasta = new Kisi();
+            Kisi yeniHasta = new Hasta();
             try
             {
                 yeniHasta.Ad = txtAd.Text;

@@ -17,7 +17,7 @@ namespace HastaneOtomasyon
         {
             InitializeComponent();
         }
-        List<Doktor> doktorlar = new List<Doktor>();
+        public static List<Doktor> doktorlar = new List<Doktor>();
         private void btnKaydet_Click(object sender, EventArgs e)
         {
 

@@ -166,7 +166,7 @@
             // 
             this.btnSil.Location = new System.Drawing.Point(19, 191);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 37);
+            this.btnSil.Size = new System.Drawing.Size(79, 38);
             this.btnSil.TabIndex = 38;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
