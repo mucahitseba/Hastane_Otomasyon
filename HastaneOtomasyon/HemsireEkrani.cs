@@ -37,13 +37,31 @@ namespace HastaneOtomasyon
                 
                 
                 MessageBox.Show($"Hosgeldin {yeniHemsire.Ad} {yeniHemsire.Soyad}{yeniHemsire.brans}");
-                FormuTemizle();
+                //FormuTemizle();
                 lstKisiler.Items.AddRange(hemsireler.ToArray());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void txtAra_KeyUp(object sender, EventArgs e)
+        {
+
+        }
+        private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void HemsireEkrani_Load(object sender, EventArgs e)

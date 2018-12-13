@@ -21,5 +21,9 @@ namespace HastaneOtomasyon
         {
 
         }
+        private void PersonelEkrani_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
