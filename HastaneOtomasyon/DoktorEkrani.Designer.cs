@@ -47,7 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbHemsire = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.lstHemsireler = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // cbBrans
@@ -91,7 +90,7 @@
             // 
             this.txtAra.Location = new System.Drawing.Point(253, 204);
             this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(196, 20);
+            this.txtAra.Size = new System.Drawing.Size(151, 20);
             this.txtAra.TabIndex = 68;
             // 
             // lstDoktorlar
@@ -210,20 +209,11 @@
             this.label7.TabIndex = 73;
             this.label7.Text = "Hemşire";
             // 
-            // lstHemsireler
-            // 
-            this.lstHemsireler.FormattingEnabled = true;
-            this.lstHemsireler.Location = new System.Drawing.Point(472, 21);
-            this.lstHemsireler.Name = "lstHemsireler";
-            this.lstHemsireler.Size = new System.Drawing.Size(135, 139);
-            this.lstHemsireler.TabIndex = 75;
-            // 
             // DoktorEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 344);
-            this.Controls.Add(this.lstHemsireler);
             this.Controls.Add(this.cbHemsire);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbBrans);
@@ -272,6 +262,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbHemsire;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckedListBox lstHemsireler;
     }
 }

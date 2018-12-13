@@ -39,7 +39,7 @@ namespace HastaneOtomasyon
                 
                 MessageBox.Show($"Hosgeldin {yeniHemsire.Ad} {yeniHemsire.Soyad}{yeniHemsire.Brans}");
                 FormuTemizle();
-                lstKisiler.Items.AddRange(hemsireler.ToArray());
+                lstHemsire.Items.AddRange(hemsireler.ToArray());
             }
             catch (Exception ex)
             {
@@ -49,9 +49,9 @@ namespace HastaneOtomasyon
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstHemsire.SelectedItem == null) return;
 
-            Hemsire seciliKisi = (Hemsire)lstKisiler.SelectedItem;
+            Hemsire seciliKisi = (Hemsire)lstHemsire.SelectedItem;
 
             try
             {
@@ -68,7 +68,7 @@ namespace HastaneOtomasyon
             }
 
             FormuTemizle();
-            lstKisiler.Items.AddRange(hemsireler.ToArray());
+            lstHemsire.Items.AddRange(hemsireler.ToArray());
         }
         private void FormuTemizle()
         {
@@ -92,13 +92,13 @@ namespace HastaneOtomasyon
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstHemsire.SelectedItem == null) return;
 
-            Hemsire seciliKisi = (Hemsire)lstKisiler.SelectedItem;
+            Hemsire seciliKisi = (Hemsire)lstHemsire.SelectedItem;
             hemsireler.Remove(seciliKisi);
 
             FormuTemizle();
-            lstKisiler.Items.AddRange(hemsireler.ToArray());
+            lstHemsire.Items.AddRange(hemsireler.ToArray());
         }
         private void txtAra_KeyUp(object sender, EventArgs e)
         {
@@ -109,14 +109,14 @@ namespace HastaneOtomasyon
 
             hemsireler.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
             FormuTemizle();
-            lstKisiler.Items.AddRange(aramalar.ToArray());
+            lstHemsire.Items.AddRange(aramalar.ToArray());
         }
         private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstHemsire.SelectedItem == null) return;
 
 
-            Hemsire seciliKisi = (Hemsire)lstKisiler.SelectedItem;
+            Hemsire seciliKisi = (Hemsire)lstHemsire.SelectedItem;
             txtAd.Text = seciliKisi.Ad;
             txtSoyad.Text = seciliKisi.Soyad;
             txtEmail.Text = seciliKisi.Email;

@@ -38,7 +38,7 @@ namespace HastaneOtomasyon
                 hastalar.Add(yeniHasta);
                 
                 FormuTemizle();
-                lstKisiler.Items.AddRange(hastalar.ToArray());
+                lstHasta.Items.AddRange(hastalar.ToArray());
             }
             catch (Exception ex)
             {
@@ -63,9 +63,9 @@ namespace HastaneOtomasyon
         }
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstHasta.SelectedItem == null) return;
 
-            Kisi seciliKisi = (Kisi)lstKisiler.SelectedItem;
+            Kisi seciliKisi = (Kisi)lstHasta.SelectedItem;
 
             try
             {
@@ -81,7 +81,7 @@ namespace HastaneOtomasyon
             }
 
             FormuTemizle();
-            lstKisiler.Items.AddRange(hastalar.ToArray());
+            lstHasta.Items.AddRange(hastalar.ToArray());
         }
 
         private void txtAra_KeyUp(object sender, KeyEventArgs e)
@@ -95,15 +95,15 @@ namespace HastaneOtomasyon
             hastalar.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
 
             FormuTemizle();
-            lstKisiler.Items.AddRange(aramalar.ToArray());
+            lstHasta.Items.AddRange(aramalar.ToArray());
         }
 
         private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstHasta.SelectedItem == null) return;
 
            
-            Kisi seciliKisi = (Kisi)lstKisiler.SelectedItem;
+            Kisi seciliKisi = (Kisi)lstHasta.SelectedItem;
             txtAd.Text = seciliKisi.Ad;
             txtSoyad.Text = seciliKisi.Soyad;
             txtEmail.Text = seciliKisi.Email;
@@ -113,13 +113,13 @@ namespace HastaneOtomasyon
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstHasta.SelectedItem == null) return;
 
-            Kisi seciliKisi = (Kisi)lstKisiler.SelectedItem;
+            Kisi seciliKisi = (Kisi)lstHasta.SelectedItem;
             hastalar.Remove(seciliKisi);
 
             FormuTemizle();
-            lstKisiler.Items.AddRange(hastalar.ToArray());
+            lstHasta.Items.AddRange(hastalar.ToArray());
         }
     }
     }

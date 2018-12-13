@@ -31,7 +31,7 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
-            this.lstKisiler = new System.Windows.Forms.ListBox();
+            this.lstHemsire = new System.Windows.Forms.ListBox();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.txtTckn = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -75,14 +75,14 @@
             this.txtAra.TabIndex = 51;
             this.txtAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAra_KeyUp);
             // 
-            // lstKisiler
+            // lstHemsire
             // 
-            this.lstKisiler.FormattingEnabled = true;
-            this.lstKisiler.Location = new System.Drawing.Point(239, 32);
-            this.lstKisiler.Name = "lstKisiler";
-            this.lstKisiler.Size = new System.Drawing.Size(196, 147);
-            this.lstKisiler.TabIndex = 50;
-            this.lstKisiler.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
+            this.lstHemsire.FormattingEnabled = true;
+            this.lstHemsire.Location = new System.Drawing.Point(239, 32);
+            this.lstHemsire.Name = "lstHemsire";
+            this.lstHemsire.Size = new System.Drawing.Size(196, 147);
+            this.lstHemsire.TabIndex = 50;
+            this.lstHemsire.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
             // 
             // btnKaydet
             // 
@@ -201,7 +201,7 @@
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.lstKisiler);
+            this.Controls.Add(this.lstHemsire);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtTckn);
             this.Controls.Add(this.label5);
@@ -226,7 +226,7 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.ListBox lstKisiler;
+        private System.Windows.Forms.ListBox lstHemsire;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.TextBox txtTckn;
         private System.Windows.Forms.Label label5;
