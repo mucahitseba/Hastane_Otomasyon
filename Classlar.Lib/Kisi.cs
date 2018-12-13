@@ -38,8 +38,8 @@ namespace Classlar.Lib
             {
                 if (!value.StartsWith("0"))
                     throw new Exception("Telefon numarasi 0 ile baslamali");
-                if (value.Length != 12)
-                    throw new Exception("Telefon numaraniz 12 hane olmali");
+                if (value.Length != 11)
+                    throw new Exception("Telefon numaraniz 11 hane olmali");
                 foreach (char harf in value)
                 {
                     if (!char.IsDigit(harf))
