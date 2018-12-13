@@ -8,6 +8,8 @@ namespace Classlar.Lib
 {
     public class Personel:Calısan
     {
+        private Branslar _brans;
         public Gorevler Gorev { get; set; }
+        public override Branslar Brans { get => this._brans; set => this._brans = value; }
     }
 }

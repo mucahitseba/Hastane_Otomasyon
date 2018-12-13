@@ -21,31 +21,109 @@ namespace HastaneOtomasyon
         private void btnKaydet_Click(object sender, EventArgs e)
         {
 
-            Kisi doktor = new Doktor();
+            Calısan doktor = new Doktor();
             try
             {
                 doktor.Ad = txtAd.Text;
                 doktor.Soyad = txtSoyad.Text;
-                doktor.TCKN = txtTckn.Text;
                 doktor.Email = txtEmail.Text;
-                
+                doktor.Telefon = txtTelefon.Text;
+                doktor.TCKN = txtTckn.Text;
+                doktor.Brans= (Branslar)Enum.Parse(typeof(Branslar), cbBrans.SelectedItem.ToString());
+                doktorlar.Add((Doktor)doktor);
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
-            
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(doktorlar.ToArray());
         }
 
         private void DoktorEkrani_Load(object sender, EventArgs e)
         {
-            cbBrans.DataSource = Enum.GetValues(typeof(Branslar));
+            cbBrans.Items.AddRange(Enum.GetNames(typeof(Branslar)));
+            //cbHemsire.Items.AddRange(HemsireEkrani.hemsireler.ToArray());
         }
 
         private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstDoktorlar.SelectedItem == null) return;
 
+
+            Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;
+            txtAd.Text = seciliKisi.Ad;
+            txtSoyad.Text = seciliKisi.Soyad;
+            txtEmail.Text = seciliKisi.Email;
+            txtTelefon.Text = seciliKisi.Telefon;
+            txtTckn.Text = seciliKisi.TCKN;
+            cbBrans.Text = seciliKisi.Brans.ToString();
+        }
+
+        private void FormuTemizle()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    if (control.Name == "txtAra")
+                        continue;
+                    control.Text = string.Empty;
+                }
+                else if (control is CheckBox)
+                    (control as CheckBox).Checked = false;
+                else if (control is ListBox lstBox)
+                    lstBox.Items.Clear();
+                else if (control is ComboBox cmbox)
+                    cmbox.Text = "";
+
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lstDoktorlar.SelectedItem == null) return;
+
+            Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;
+
+            try
+            {
+                seciliKisi.Ad = txtAd.Text;
+                seciliKisi.Soyad = txtSoyad.Text;
+                seciliKisi.TCKN = txtTckn.Text;
+                seciliKisi.Telefon = txtTelefon.Text;
+                seciliKisi.Email = txtEmail.Text;
+                seciliKisi.Brans = (Branslar)cbBrans.SelectedItem;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            foreach (Hemsire hemsire in HemsireEkrani.hemsireler)
+            {
+                if ((Branslar)cbBrans.SelectedValue == hemsire.Brans)
+                    cbHemsire.Items.Add(hemsire);
+            }
+
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(doktorlar.ToArray());
+        }
+
+        private void cbBrans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbHemsire.Items.Clear();
+            string seciliBrans = (string)cbBrans.SelectedItem;
+            foreach (Hemsire hemsire in HemsireEkrani.hemsireler)
+            {
+                if (seciliBrans == hemsire.Brans.ToString())
+                {
+                    cbHemsire.Items.Add(hemsire);
+                }
+                
+                    
+            }
         }
     }
 }

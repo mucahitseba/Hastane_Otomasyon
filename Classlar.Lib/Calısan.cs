@@ -18,9 +18,12 @@ namespace Classlar.Lib
                 this._maas = value;
             }
         }
-        public decimal SaatlikUcret { set => throw new NotImplementedException(); }
 
-        public decimal Tutar => throw new NotImplementedException();
+
+        public abstract Branslar Brans { get; set; }
+        public decimal SaatlikUcret { get; set; }
+
+        public decimal Tutar { get;set; }
 
         public decimal AvansVer()
         {

@@ -8,14 +8,9 @@ namespace Classlar.Lib
 {
     public class Doktor:Calısan
     {
-        public Branslar Brans { get; set; }
+        private Branslar _brans;
 
         public Hemsire Hemsire { get; set; }
-
-        public Doktor()
-        {
-            
-        }
-
+        public override Branslar Brans { get => this._brans; set => this._brans = value; }
     }
 }

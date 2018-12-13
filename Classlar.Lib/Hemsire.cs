@@ -8,7 +8,9 @@ namespace Classlar.Lib
 {
    public class Hemsire:Calısan,IMaasAlan
     {
-        public Branslar brans;
-        
+        public Branslar _brans;
+        public bool _atandiMi = false;
+
+        public override Branslar Brans { get => this._brans; set => this._brans = value; }
     }
 }

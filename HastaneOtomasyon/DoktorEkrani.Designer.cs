@@ -33,7 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
-            this.lstKisiler = new System.Windows.Forms.ListBox();
+            this.lstDoktorlar = new System.Windows.Forms.ListBox();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.txtTckn = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbHemsire = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.lstHemsireler = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // cbBrans
@@ -56,6 +57,7 @@
             this.cbBrans.Name = "cbBrans";
             this.cbBrans.Size = new System.Drawing.Size(135, 21);
             this.cbBrans.TabIndex = 72;
+            this.cbBrans.SelectedIndexChanged += new System.EventHandler(this.cbBrans_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -83,6 +85,7 @@
             this.btnGuncelle.TabIndex = 69;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // txtAra
             // 
@@ -91,14 +94,14 @@
             this.txtAra.Size = new System.Drawing.Size(196, 20);
             this.txtAra.TabIndex = 68;
             // 
-            // lstKisiler
+            // lstDoktorlar
             // 
-            this.lstKisiler.FormattingEnabled = true;
-            this.lstKisiler.Location = new System.Drawing.Point(253, 21);
-            this.lstKisiler.Name = "lstKisiler";
-            this.lstKisiler.Size = new System.Drawing.Size(196, 147);
-            this.lstKisiler.TabIndex = 67;
-            this.lstKisiler.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
+            this.lstDoktorlar.FormattingEnabled = true;
+            this.lstDoktorlar.Location = new System.Drawing.Point(253, 21);
+            this.lstDoktorlar.Name = "lstDoktorlar";
+            this.lstDoktorlar.Size = new System.Drawing.Size(151, 147);
+            this.lstDoktorlar.TabIndex = 67;
+            this.lstDoktorlar.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
             // 
             // btnKaydet
             // 
@@ -207,11 +210,20 @@
             this.label7.TabIndex = 73;
             this.label7.Text = "Hemşire";
             // 
+            // lstHemsireler
+            // 
+            this.lstHemsireler.FormattingEnabled = true;
+            this.lstHemsireler.Location = new System.Drawing.Point(472, 21);
+            this.lstHemsireler.Name = "lstHemsireler";
+            this.lstHemsireler.Size = new System.Drawing.Size(135, 139);
+            this.lstHemsireler.TabIndex = 75;
+            // 
             // DoktorEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 344);
+            this.ClientSize = new System.Drawing.Size(729, 344);
+            this.Controls.Add(this.lstHemsireler);
             this.Controls.Add(this.cbHemsire);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbBrans);
@@ -219,7 +231,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.lstKisiler);
+            this.Controls.Add(this.lstDoktorlar);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtTckn);
             this.Controls.Add(this.label5);
@@ -246,7 +258,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.ListBox lstKisiler;
+        private System.Windows.Forms.ListBox lstDoktorlar;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.TextBox txtTckn;
         private System.Windows.Forms.Label label5;
@@ -260,5 +272,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbHemsire;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckedListBox lstHemsireler;
     }
 }

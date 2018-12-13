@@ -17,12 +17,13 @@ namespace HastaneOtomasyon
         {
             InitializeComponent();
         }
-        List<Hemsire> hemsireler = new List<Hemsire>();
+        public static List<Hemsire> hemsireler = new List<Hemsire>();
         List<Hemsire> aramalar = new List<Hemsire>();
         Branslar brans=new Branslar();
-        
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+
             Hemsire yeniHemsire = new Hemsire();
             try
             {
@@ -31,12 +32,12 @@ namespace HastaneOtomasyon
                 yeniHemsire.Email = txtEmail.Text;
                 yeniHemsire.Telefon = txtTelefon.Text;
                 yeniHemsire.TCKN = txtTckn.Text;
-                yeniHemsire.brans = (Branslar)comboBox1.SelectedItem;
+                yeniHemsire.Brans = (Branslar)comboBox1.SelectedItem;
                 hemsireler.Add(yeniHemsire);
                 
                 
                 
-                MessageBox.Show($"Hosgeldin {yeniHemsire.Ad} {yeniHemsire.Soyad}{yeniHemsire.brans}");
+                MessageBox.Show($"Hosgeldin {yeniHemsire.Ad} {yeniHemsire.Soyad}{yeniHemsire.Brans}");
                 FormuTemizle();
                 lstKisiler.Items.AddRange(hemsireler.ToArray());
             }
@@ -59,7 +60,7 @@ namespace HastaneOtomasyon
                 seciliKisi.TCKN = txtTckn.Text;
                 seciliKisi.Telefon = txtTelefon.Text;
                 seciliKisi.Email = txtEmail.Text;
-                seciliKisi.brans = (Branslar)comboBox1.SelectedItem;
+                seciliKisi.Brans = (Branslar)comboBox1.SelectedItem;
             }
             catch (Exception ex)
             {
@@ -121,7 +122,7 @@ namespace HastaneOtomasyon
             txtEmail.Text = seciliKisi.Email;
             txtTelefon.Text = seciliKisi.Telefon;
             txtTckn.Text = seciliKisi.TCKN;
-            comboBox1.Text = seciliKisi.brans.ToString();
+            comboBox1.Text = seciliKisi.Brans.ToString();
         }
 
         private void HemsireEkrani_Load(object sender, EventArgs e)
