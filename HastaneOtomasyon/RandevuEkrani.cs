@@ -52,6 +52,7 @@ namespace HastaneOtomasyon
 					btn.Name = "btn_" + (i * j).ToString();
 					btn.Location = new System.Drawing.Point(50 * j + 20, i * 40 + 40);
 					btn.Size = new System.Drawing.Size(50, 40);
+					btn.Click += new EventHandler(Tikla);
 					seanslar.Add(btn);
 					this.panel2.Controls.Add(btn);
 
@@ -74,8 +75,15 @@ namespace HastaneOtomasyon
 					}
 				}
 			}
+			
+
+
+		}
+		protected void Tikla(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			MessageBox.Show(button.Text);
 		}
 
-		
 	}
 }
