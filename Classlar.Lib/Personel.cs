@@ -8,6 +8,6 @@ namespace Classlar.Lib
 {
     public class Personel:Calısan
     {
-        public Gorevler Gorev { get; set; }
+        public Gorevler Gorev;
     }
 }

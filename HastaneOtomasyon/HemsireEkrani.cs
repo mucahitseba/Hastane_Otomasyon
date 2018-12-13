@@ -19,7 +19,7 @@ namespace HastaneOtomasyon
         }
         List<Hemsire> hemsireler = new List<Hemsire>();
         List<Hemsire> aramalar = new List<Hemsire>();
-        Branslar brans=new Branslar();
+        
         
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -33,8 +33,6 @@ namespace HastaneOtomasyon
                 yeniHemsire.TCKN = txtTckn.Text;
                 yeniHemsire.brans = (Branslar)comboBox1.SelectedItem;
                 hemsireler.Add(yeniHemsire);
-                
-                
                 
                 MessageBox.Show($"Hosgeldin {yeniHemsire.Ad} {yeniHemsire.Soyad}{yeniHemsire.brans}");
                 FormuTemizle();
