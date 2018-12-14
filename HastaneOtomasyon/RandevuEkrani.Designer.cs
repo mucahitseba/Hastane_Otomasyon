@@ -67,6 +67,7 @@
             this.cmbDoktorlar.Name = "cmbDoktorlar";
             this.cmbDoktorlar.Size = new System.Drawing.Size(121, 21);
             this.cmbDoktorlar.TabIndex = 3;
+            this.cmbDoktorlar.SelectedIndexChanged += new System.EventHandler(this.cmbDoktorlar_SelectedIndexChanged);
             // 
             // cmbServis
             // 
