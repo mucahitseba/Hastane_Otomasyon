@@ -36,6 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button21 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lstWKayıt = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,12 +105,13 @@
             // button21
             // 
             this.button21.Enabled = false;
-            this.button21.Location = new System.Drawing.Point(485, 378);
+            this.button21.Location = new System.Drawing.Point(75, 262);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(75, 23);
             this.button21.TabIndex = 3;
             this.button21.Text = "Randevu Al";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // panel3
             // 
@@ -113,11 +120,52 @@
             this.panel3.Size = new System.Drawing.Size(272, 268);
             this.panel3.TabIndex = 4;
             // 
+            // lstWKayıt
+            // 
+            this.lstWKayıt.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lstWKayıt.Location = new System.Drawing.Point(25, 352);
+            this.lstWKayıt.Name = "lstWKayıt";
+            this.lstWKayıt.Size = new System.Drawing.Size(702, 132);
+            this.lstWKayıt.TabIndex = 5;
+            this.lstWKayıt.UseCompatibleStateImageBehavior = false;
+            this.lstWKayıt.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Hasta Adı Soyadı";
+            this.columnHeader1.Width = 126;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Servis";
+            this.columnHeader2.Width = 130;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Doktor";
+            this.columnHeader3.Width = 122;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Hemşire";
+            this.columnHeader4.Width = 134;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Saat";
+            this.columnHeader5.Width = 100;
+            // 
             // RandevuEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 413);
+            this.ClientSize = new System.Drawing.Size(772, 496);
+            this.Controls.Add(this.lstWKayıt);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.panel1);
@@ -142,6 +190,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cmbServis;
         private System.Windows.Forms.ComboBox cmbDoktorlar;
+        private System.Windows.Forms.ListView lstWKayıt;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 

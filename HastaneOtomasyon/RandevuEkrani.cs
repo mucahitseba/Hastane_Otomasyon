@@ -96,6 +96,17 @@ namespace HastaneOtomasyon
             {
                 btn.Enabled = true;
             }
+            button21.Enabled = true;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+
+            string[] kayıt = { lstHastalar.Text, cmbServis.Text,cmbDoktorlar.Text,(string)button.Text };
+            var satir = new ListViewItem(kayıt);
+            lstWKayıt.Items.Add(satir);
+
         }
     }
 }
