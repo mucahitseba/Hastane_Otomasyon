@@ -22,6 +22,7 @@ namespace HastaneOtomasyon
         {
 
             Calısan doktor = new Doktor();
+            
             try
             {
                 doktor.Ad = txtAd.Text;
@@ -31,6 +32,7 @@ namespace HastaneOtomasyon
                 doktor.TCKN = txtTckn.Text;
                 doktor.Brans= (Branslar)Enum.Parse(typeof(Branslar), cbBrans.SelectedItem.ToString());
                 doktorlar.Add((Doktor)doktor);
+                
 
             }
             catch (Exception ex)
@@ -60,6 +62,7 @@ namespace HastaneOtomasyon
             txtTelefon.Text = seciliKisi.Telefon;
             txtTckn.Text = seciliKisi.TCKN;
             cbBrans.Text = seciliKisi.Brans.ToString();
+            
         }
 
         private void FormuTemizle()
