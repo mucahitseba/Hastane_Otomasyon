@@ -40,7 +40,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -111,8 +110,7 @@
             this.button21.TabIndex = 3;
             this.button21.Text = "Randevu Al";
             this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
+            
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(264, 78);
@@ -126,7 +124,6 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
             this.columnHeader5});
             this.lstWKayıt.Location = new System.Drawing.Point(25, 352);
             this.lstWKayıt.Name = "lstWKayıt";
@@ -149,11 +146,6 @@
             // 
             this.columnHeader3.Text = "Doktor";
             this.columnHeader3.Width = 122;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Hemşire";
-            this.columnHeader4.Width = 134;
             // 
             // columnHeader5
             // 
@@ -194,7 +186,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

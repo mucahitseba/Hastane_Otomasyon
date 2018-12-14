@@ -17,7 +17,7 @@ namespace HastaneOtomasyon
         {
             InitializeComponent();
         }
-
+        
         private void RandevuEkrani_Load(object sender, EventArgs e)
         {
             cmbServis.DataSource = Enum.GetValues(typeof(Branslar));
@@ -27,6 +27,7 @@ namespace HastaneOtomasyon
             cmbDoktorlar.Enabled = false;
             int dakika, saat, i;
             int sayac = 0;
+            
             for (i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -74,9 +75,18 @@ namespace HastaneOtomasyon
 		
 		protected void Tikla(object sender, EventArgs e)
 		{
-			Button button = sender as Button;
-			MessageBox.Show(button.Text);
-		}
+            Button button = sender as Button;
+            
+            
+                
+                string[] kayıt = { lstHastalar.Text, cmbServis.Text, cmbDoktorlar.Text, button.Text };
+                var satir = new ListViewItem(kayıt);
+                lstWKayıt.Items.Add(satir); 
+            
+
+        }
+
+    
 
         private void cmbServis_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -99,14 +109,6 @@ namespace HastaneOtomasyon
             button21.Enabled = true;
         }
 
-        private void button21_Click(object sender, EventArgs e)
-        {
-            Button button = sender as Button;
-
-            string[] kayıt = { lstHastalar.Text, cmbServis.Text,cmbDoktorlar.Text,(string)button.Text };
-            var satir = new ListViewItem(kayıt);
-            lstWKayıt.Items.Add(satir);
-
-        }
+        
     }
 }
