@@ -8,6 +8,8 @@ namespace Classlar.Lib
 {
     public abstract class Calısan : Kisi, IMaasAlan
     {
+        //private string _ad, _soyad, _telefon, _email, _tckn;
+
         private decimal _maas;
         public decimal Maas
         {
@@ -18,8 +20,14 @@ namespace Classlar.Lib
                 this._maas = value;
             }
         }
+        //public override string Ad { get; set; }
+        //public override string Soyad { get; set; }
 
+        //public override string Telefon { get; set; }
+        //public override string Email { get; set; }
+        //public override string TCKN { get; set; }
 
+        public virtual Hemsire Hemsire { get; set; }
         public abstract Branslar Brans { get; set; }
         public decimal SaatlikUcret { get; set; }
 

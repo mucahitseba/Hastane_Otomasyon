@@ -10,10 +10,12 @@ namespace Classlar.Lib
     public class Doktor:Calısan
     {
         private Branslar _brans;
+        private Hemsire _hemsire;
 
-        public Hemsire Hemsire { get; set; }
-        public override Branslar Brans { get => this._brans; set => this._brans = value; }
         private string _ad, _soyad, _telefon, _email, _tckn;
+
+        public override Hemsire Hemsire { get=>this._hemsire; set=>this._hemsire = value; }
+        public override Branslar Brans { get => this._brans; set => this._brans = value; }
 
         public override string Ad
         {

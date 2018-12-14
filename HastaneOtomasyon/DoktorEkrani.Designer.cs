@@ -199,6 +199,7 @@
             this.cbHemsire.Name = "cbHemsire";
             this.cbHemsire.Size = new System.Drawing.Size(135, 21);
             this.cbHemsire.TabIndex = 74;
+            this.cbHemsire.SelectedIndexChanged += new System.EventHandler(this.cbHemsire_SelectedIndexChanged);
             // 
             // label7
             // 
