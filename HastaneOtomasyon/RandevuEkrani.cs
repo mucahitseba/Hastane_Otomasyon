@@ -22,32 +22,8 @@ namespace HastaneOtomasyon
         {
             cmbServis.DataSource = Enum.GetValues(typeof(Branslar));
             lstHastalar.Items.AddRange(HastaEkrani.hastalar.ToArray());
-        }
-
-        private void lstHastalar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var seciliHasta = (Hasta)lstHastalar.SelectedItem;
-            cmbServis.Enabled = true;
-        }
-
-        private void cmbServis_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var secilenServis = (Branslar)Enum.Parse(typeof(Branslar), cmbServis.SelectedItem.ToString());
-            cmbDoktorlar.Enabled = true;
-        }
-		List<Button> seanslar = new List<Button>();
-		
-		protected void Tikla(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			MessageBox.Show(button.Text);
-		}
-
-        private void RandevuEkrani_Load_1(object sender, EventArgs e)
-        {
-            cmbServis.DataSource = Enum.GetValues(typeof(Branslar));
-
-
+            cmbServis.Enabled = false;
+            cmbDoktorlar.Enabled = false;
             int dakika, saat, i;
             int sayac = 0;
             for (i = 0; i < 5; i++)
@@ -61,6 +37,7 @@ namespace HastaneOtomasyon
                     btn.Click += new EventHandler(Tikla);
                     seanslar.Add(btn);
                     this.panel3.Controls.Add(btn);
+                    btn.Enabled = false;
 
                 }
             }
@@ -81,6 +58,31 @@ namespace HastaneOtomasyon
                     }
                 }
             }
+        }
+
+        private void lstHastalar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var seciliHasta = (Hasta)lstHastalar.SelectedItem;
+            cmbServis.Enabled = true;
+            
+            
+        }
+
+        
+		List<Button> seanslar = new List<Button>();
+		
+		protected void Tikla(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			MessageBox.Show(button.Text);
+		}
+
+        private void cmbServis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                var secilenServis = (Branslar)Enum.Parse(typeof(Branslar), cmbServis.SelectedItem.ToString());
+            cmbDoktorlar.Enabled = true;
+            
+            
         }
     }
 }
