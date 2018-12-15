@@ -110,10 +110,10 @@
             this.button21.TabIndex = 3;
             this.button21.Text = "Randevu Al";
             this.button21.UseVisualStyleBackColor = true;
-            
+            // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(264, 78);
+            this.panel3.Location = new System.Drawing.Point(284, 78);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(272, 268);
             this.panel3.TabIndex = 4;

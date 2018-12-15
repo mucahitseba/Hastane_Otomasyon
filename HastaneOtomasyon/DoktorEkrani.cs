@@ -65,7 +65,11 @@ namespace HastaneOtomasyon
             txtTelefon.Text = seciliKisi.Telefon;
             txtTckn.Text = seciliKisi.TCKN;
             cbBrans.Text = seciliKisi.Brans.ToString();
-            cbHemsire.Text = seciliKisi.Hemsire.ToString();
+            if (seciliKisi.Hemsire != null)
+            {
+                cbHemsire.Text = seciliKisi.Hemsire.ToString();
+            }
+            
             
         }
 
