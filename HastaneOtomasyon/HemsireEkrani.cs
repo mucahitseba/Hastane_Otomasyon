@@ -21,7 +21,7 @@ namespace HastaneOtomasyon
         }
         public static List<Hemsire> hemsireler = new List<Hemsire>();
         List<Hemsire> aramalar = new List<Hemsire>();
-        Branslar brans=new Branslar();
+        
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -35,6 +35,15 @@ namespace HastaneOtomasyon
                 yeniHemsire.Telefon = txtTelefon.Text;
                 yeniHemsire.TCKN = txtTckn.Text;
                 yeniHemsire.Brans = (Branslar)comboBox1.SelectedItem;
+                foreach (Hemsire hemsireler in hemsireler)
+                {
+                    if (hemsireler.TCKN == txtTckn.Text)
+                    {
+                        throw new Exception("Bu TC numarasıyla kayıtlı hemşire var");
+                    }
+
+
+                }
                 hemsireler.Add(yeniHemsire);
                 
                 
@@ -63,6 +72,7 @@ namespace HastaneOtomasyon
                 seciliKisi.Telefon = txtTelefon.Text;
                 seciliKisi.Email = txtEmail.Text;
                 seciliKisi.Brans = (Branslar)comboBox1.SelectedItem;
+
             }
             catch (Exception ex)
             {
@@ -71,6 +81,8 @@ namespace HastaneOtomasyon
 
             FormuTemizle();
             lstHemsire.Items.AddRange(hemsireler.ToArray());
+
+
         }
         private void FormuTemizle()
         {

@@ -39,6 +39,15 @@ namespace HastaneOtomasyon
                 yeniPersonel.Telefon = txtTelefon.Text;
                 yeniPersonel.TCKN = txtTckn.Text;
                 yeniPersonel.Gorev = (Gorevler)comboBox1.SelectedItem;
+                foreach (Personel personeller in personeller)
+                {
+                    if (personeller.TCKN == txtTckn.Text)
+                    {
+                        throw new Exception("Bu TC numarasıyla kayıtlı personel var");
+                    }
+
+
+                }
                 personeller.Add(yeniPersonel);
 
                 MessageBox.Show($"Hosgeldin {yeniPersonel.Ad} {yeniPersonel.Soyad}{yeniPersonel.Gorev}");
@@ -95,6 +104,8 @@ namespace HastaneOtomasyon
                 seciliKisi.Telefon = txtTelefon.Text;
                 seciliKisi.Email = txtEmail.Text;
                 seciliKisi.Gorev = (Gorevler)comboBox1.SelectedItem;
+
+
             }
             catch (Exception ex)
             {
@@ -102,6 +113,7 @@ namespace HastaneOtomasyon
             }
 
             FormuTemizle();
+            
             lstPersoneller.Items.AddRange(personeller.ToArray());
         }
 

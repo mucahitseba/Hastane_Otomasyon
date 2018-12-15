@@ -37,6 +37,15 @@ namespace HastaneOtomasyon
                 doktor.TCKN = txtTckn.Text;
                 doktor.Brans= (Branslar)Enum.Parse(typeof(Branslar), cbBrans.SelectedItem.ToString());
                 _doktor = doktor;
+                foreach (Doktor doktorlar in doktorlar)
+                {
+                    if (doktorlar.TCKN == txtTckn.Text)
+                    {
+                        throw new Exception("Bu TC numarasıyla kayıtlı doktor var");
+                    }
+
+
+                }
                 doktorlar.Add((Doktor)doktor);
             }
             catch (Exception ex)

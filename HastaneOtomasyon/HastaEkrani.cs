@@ -36,9 +36,17 @@ namespace HastaneOtomasyon
                 yeniHasta.Email = txtEmail.Text;
                 yeniHasta.Telefon = txtTelefon.Text;
                 yeniHasta.TCKN = txtTckn.Text;
-
+                foreach (Hasta hastalar in hastalar)
+                {
+                    if (hastalar.TCKN == txtTckn.Text)
+                    {
+                        throw new Exception("Bu TC numarasıyla kayıtlı hasta var");
+                    }
+                    
+                        
+                }
                 hastalar.Add(yeniHasta);
-                
+
                 FormuTemizle();
                 lstHasta.Items.AddRange(hastalar.ToArray());
             }
@@ -76,6 +84,7 @@ namespace HastaneOtomasyon
                 seciliKisi.TCKN = txtTckn.Text;
                 seciliKisi.Telefon = txtTelefon.Text;
                 seciliKisi.Email = txtEmail.Text;
+
             }
             catch (Exception ex)
             {
