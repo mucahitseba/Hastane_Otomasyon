@@ -106,7 +106,7 @@ namespace HastaneOtomasyon
             {
                 btn.Enabled = true;
             }
-            button21.Enabled = true;
+            
         }
 
         

@@ -34,7 +34,6 @@
             this.cmbServis = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button21 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lstWKayıt = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,75 +46,73 @@
             // lstHastalar
             // 
             this.lstHastalar.FormattingEnabled = true;
-            this.lstHastalar.Location = new System.Drawing.Point(25, 38);
+            this.lstHastalar.ItemHeight = 16;
+            this.lstHastalar.Location = new System.Drawing.Point(163, 53);
+            this.lstHastalar.Margin = new System.Windows.Forms.Padding(4);
             this.lstHastalar.Name = "lstHastalar";
-            this.lstHastalar.Size = new System.Drawing.Size(153, 199);
+            this.lstHastalar.Size = new System.Drawing.Size(203, 260);
             this.lstHastalar.TabIndex = 1;
             this.lstHastalar.SelectedIndexChanged += new System.EventHandler(this.lstHastalar_SelectedIndexChanged);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.cmbDoktorlar);
             this.panel1.Controls.Add(this.cmbServis);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(264, 12);
+            this.panel1.Location = new System.Drawing.Point(465, 53);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 60);
+            this.panel1.Size = new System.Drawing.Size(363, 74);
             this.panel1.TabIndex = 2;
             // 
             // cmbDoktorlar
             // 
             this.cmbDoktorlar.FormattingEnabled = true;
-            this.cmbDoktorlar.Location = new System.Drawing.Point(119, 31);
+            this.cmbDoktorlar.Location = new System.Drawing.Point(159, 38);
+            this.cmbDoktorlar.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDoktorlar.Name = "cmbDoktorlar";
-            this.cmbDoktorlar.Size = new System.Drawing.Size(121, 21);
+            this.cmbDoktorlar.Size = new System.Drawing.Size(160, 24);
             this.cmbDoktorlar.TabIndex = 3;
             this.cmbDoktorlar.SelectedIndexChanged += new System.EventHandler(this.cmbDoktorlar_SelectedIndexChanged);
             // 
             // cmbServis
             // 
             this.cmbServis.FormattingEnabled = true;
-            this.cmbServis.Location = new System.Drawing.Point(119, 5);
+            this.cmbServis.Location = new System.Drawing.Point(159, 6);
+            this.cmbServis.Margin = new System.Windows.Forms.Padding(4);
             this.cmbServis.Name = "cmbServis";
-            this.cmbServis.Size = new System.Drawing.Size(121, 21);
+            this.cmbServis.Size = new System.Drawing.Size(160, 24);
             this.cmbServis.TabIndex = 2;
             this.cmbServis.SelectedIndexChanged += new System.EventHandler(this.cmbServis_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 39);
+            this.label2.Location = new System.Drawing.Point(49, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Doktorlar";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 13);
+            this.label1.Location = new System.Drawing.Point(49, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Servis";
             // 
-            // button21
-            // 
-            this.button21.Enabled = false;
-            this.button21.Location = new System.Drawing.Point(75, 262);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 3;
-            this.button21.Text = "Randevu Al";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(284, 78);
+            this.panel3.Location = new System.Drawing.Point(465, 135);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(272, 268);
+            this.panel3.Size = new System.Drawing.Size(363, 330);
             this.panel3.TabIndex = 4;
             // 
             // lstWKayıt
@@ -125,9 +122,10 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader5});
-            this.lstWKayıt.Location = new System.Drawing.Point(25, 352);
+            this.lstWKayıt.Location = new System.Drawing.Point(163, 482);
+            this.lstWKayıt.Margin = new System.Windows.Forms.Padding(4);
             this.lstWKayıt.Name = "lstWKayıt";
-            this.lstWKayıt.Size = new System.Drawing.Size(702, 132);
+            this.lstWKayıt.Size = new System.Drawing.Size(665, 194);
             this.lstWKayıt.TabIndex = 5;
             this.lstWKayıt.UseCompatibleStateImageBehavior = false;
             this.lstWKayıt.View = System.Windows.Forms.View.Details;
@@ -154,14 +152,15 @@
             // 
             // RandevuEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 496);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1067, 753);
             this.Controls.Add(this.lstWKayıt);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button21);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lstHastalar);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RandevuEkrani";
             this.Text = "Randevu Ekranı";
             this.Load += new System.EventHandler(this.RandevuEkrani_Load);
@@ -174,7 +173,6 @@
         #endregion
         private System.Windows.Forms.ListBox lstHastalar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
