@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HemsireEkrani));
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
@@ -57,6 +58,8 @@
             // btnSil
             // 
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSil.Image = global::HastaneOtomasyon.Properties.Resources.sil;
+            this.btnSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSil.Location = new System.Drawing.Point(93, 480);
             this.btnSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSil.Name = "btnSil";
@@ -69,6 +72,8 @@
             // btnGuncelle
             // 
             this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Image = global::HastaneOtomasyon.Properties.Resources.güncelle;
+            this.btnGuncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuncelle.Location = new System.Drawing.Point(93, 401);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
@@ -85,7 +90,6 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(203, 22);
             this.txtAra.TabIndex = 51;
-            
             this.txtAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAra_KeyUp);
             // 
             // lstHemsire
@@ -102,6 +106,8 @@
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.Image")));
+            this.btnKaydet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKaydet.Location = new System.Drawing.Point(93, 322);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(4);
             this.btnKaydet.Name = "btnKaydet";
@@ -174,15 +180,17 @@
             // 
             // içeriAktarToolStripMenuItem
             // 
+            this.içeriAktarToolStripMenuItem.Image = global::HastaneOtomasyon.Properties.Resources.iceriaktar;
             this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.içeriAktarToolStripMenuItem.Text = "İçeri Aktar";
             this.içeriAktarToolStripMenuItem.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem_Click);
             // 
             // dışarıAktarToolStripMenuItem
             // 
+            this.dışarıAktarToolStripMenuItem.Image = global::HastaneOtomasyon.Properties.Resources.dısarıaktar;
             this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
             this.dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem_Click);
             // 

@@ -56,32 +56,40 @@
             // hastaToolStripMenuItem
             // 
             this.hastaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hastaToolStripMenuItem.Image = global::HastaneOtomasyon.Properties.Resources.hasta;
+            this.hastaToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hastaToolStripMenuItem.Name = "hastaToolStripMenuItem";
-            this.hastaToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.hastaToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.hastaToolStripMenuItem.Text = "Hasta";
             this.hastaToolStripMenuItem.Click += new System.EventHandler(this.hastaToolStripMenuItem_Click);
             // 
             // doktorToolStripMenuItem2
             // 
             this.doktorToolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.doktorToolStripMenuItem2.Image = global::HastaneOtomasyon.Properties.Resources.doktor;
+            this.doktorToolStripMenuItem2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.doktorToolStripMenuItem2.Name = "doktorToolStripMenuItem2";
-            this.doktorToolStripMenuItem2.Size = new System.Drawing.Size(69, 24);
+            this.doktorToolStripMenuItem2.Size = new System.Drawing.Size(89, 24);
             this.doktorToolStripMenuItem2.Text = "Doktor";
             this.doktorToolStripMenuItem2.Click += new System.EventHandler(this.doktorToolStripMenuItem2_Click);
             // 
             // hemşireToolStripMenuItem1
             // 
             this.hemşireToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hemşireToolStripMenuItem1.Image = global::HastaneOtomasyon.Properties.Resources.hemsire;
+            this.hemşireToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hemşireToolStripMenuItem1.Name = "hemşireToolStripMenuItem1";
-            this.hemşireToolStripMenuItem1.Size = new System.Drawing.Size(77, 24);
+            this.hemşireToolStripMenuItem1.Size = new System.Drawing.Size(97, 24);
             this.hemşireToolStripMenuItem1.Text = "Hemşire";
             this.hemşireToolStripMenuItem1.Click += new System.EventHandler(this.hemşireToolStripMenuItem1_Click);
             // 
             // personelToolStripMenuItem1
             // 
             this.personelToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.personelToolStripMenuItem1.Image = global::HastaneOtomasyon.Properties.Resources.personel;
+            this.personelToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.personelToolStripMenuItem1.Name = "personelToolStripMenuItem1";
-            this.personelToolStripMenuItem1.Size = new System.Drawing.Size(79, 24);
+            this.personelToolStripMenuItem1.Size = new System.Drawing.Size(99, 24);
             this.personelToolStripMenuItem1.Text = "Personel";
             this.personelToolStripMenuItem1.Click += new System.EventHandler(this.personelToolStripMenuItem1_Click);
             // 
@@ -89,8 +97,10 @@
             // 
             this.randevuEkranıToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.randevuEkranıToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.randevuEkranıToolStripMenuItem.Image = global::HastaneOtomasyon.Properties.Resources.randevu;
+            this.randevuEkranıToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.randevuEkranıToolStripMenuItem.Name = "randevuEkranıToolStripMenuItem";
-            this.randevuEkranıToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.randevuEkranıToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.randevuEkranıToolStripMenuItem.Text = "Randevu Ekranı";
             this.randevuEkranıToolStripMenuItem.Click += new System.EventHandler(this.randevuEkranıToolStripMenuItem_Click);
             // 
@@ -102,7 +112,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AcilisEkrani";
             this.Text = "Hastane Otomasyonu";
             this.Load += new System.EventHandler(this.AcilisEkrani_Load);
