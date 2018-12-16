@@ -17,7 +17,15 @@ namespace HastaneOtomasyon
         {
             InitializeComponent();
         }
-        
+
+        private Hasta _seciliHasta;
+        private Branslar _secilenServis;
+        int dakika, saat, i;
+        int sayac = 0;
+        public DateTime randevuSaati;
+        List<Button> seanslar = new List<Button>();
+        List<Randevu> randevular = new List<Randevu>();
+
         private void RandevuEkrani_Load(object sender, EventArgs e)
         {
             cmbServis.DataSource = Enum.GetValues(typeof(Branslar));
@@ -25,8 +33,6 @@ namespace HastaneOtomasyon
             lstHastalar.Items.AddRange(HastaEkrani.hastalar.ToArray());
             cmbServis.Enabled = false;
             cmbDoktorlar.Enabled = false;
-            int dakika, saat, i;
-            int sayac = 0;
             
             for (i = 0; i < 5; i++)
             {
@@ -36,7 +42,7 @@ namespace HastaneOtomasyon
                     btn.Name = "btn_" + (i * j).ToString();
                     btn.Location = new System.Drawing.Point(50 * j + 20, i * 40 + 40);
                     btn.Size = new System.Drawing.Size(50, 40);
-                    btn.Click += new EventHandler(Tikla);
+                    btn.Click += new EventHandler(SeansSec);
                     seanslar.Add(btn);
                     this.panel3.Controls.Add(btn);
                     btn.Enabled = false;
@@ -61,40 +67,27 @@ namespace HastaneOtomasyon
                 }
             }
         }
-
         private void lstHastalar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var seciliHasta = (Hasta)lstHastalar.SelectedItem;
+            _seciliHasta = (Hasta)lstHastalar.SelectedItem;
             cmbServis.Enabled = true;
             
             
         }
-
-        
-		List<Button> seanslar = new List<Button>();
-		
-		protected void Tikla(object sender, EventArgs e)
-		{
+        private void SeansSec(object sender, EventArgs e)
+        {
             Button button = sender as Button;
-            
-            
-                
-                string[] kayıt = { lstHastalar.Text, cmbServis.Text, cmbDoktorlar.Text, button.Text };
-                var satir = new ListViewItem(kayıt);
-                lstWKayıt.Items.Add(satir); 
-            
-
+            if (button == null)return;
+            randevuSaati = DateTime.Parse(button.Text);
         }
-
-    
 
         private void cmbServis_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbDoktorlar.Items.Clear();
-            var secilenServis = (Branslar)Enum.Parse(typeof(Branslar), cmbServis.SelectedValue.ToString());
+            _secilenServis = (Branslar)Enum.Parse(typeof(Branslar), cmbServis.SelectedValue.ToString());
             foreach (Doktor doktor in DoktorEkrani.doktorlar)
             {
-                if(secilenServis == doktor.Brans)
+                if(_secilenServis == doktor.Brans)
                     cmbDoktorlar.Items.Add(doktor);
             }
             cmbDoktorlar.Enabled = true;   
@@ -106,9 +99,49 @@ namespace HastaneOtomasyon
             {
                 btn.Enabled = true;
             }
-            button21.Enabled = true;
+            btnRandevu.Enabled = true;
         }
 
-        
+        private void btnRandevu_Click(object sender, EventArgs e)
+        {
+            bool eslesmeVarmi = false;
+            if (_seciliHasta.HastaRandevuList != null)
+            {
+                foreach (Randevu hastaRandevu in _seciliHasta.HastaRandevuList)
+                {
+                    if (hastaRandevu.RandevuSaati == randevuSaati && 
+                        hastaRandevu.RandevuAlinanServis == _secilenServis)
+                    {
+                        MessageBox.Show("Seçtiğiniz seans ve serviste zaten bir randevunuz bulunmaktadır");
+                        eslesmeVarmi = true;
+                    }
+                    else if (hastaRandevu.RandevuSaati == randevuSaati &&
+                             hastaRandevu.RandevuAlinanServis != _secilenServis)
+                    {
+                        MessageBox.Show("Seçtiğiniz seansta başka serviste randevunuz bulunduğundan seçim yapamazsınız");
+                        eslesmeVarmi = true;
+                    }
+                }
+
+                if (!eslesmeVarmi)
+                    RandevuOlustur();
+            }
+        }
+
+        private void RandevuOlustur()
+        {
+            Randevu randevu = new Randevu();
+            randevu.RandevuAlanHasta = (Hasta)lstHastalar.SelectedItem;
+            randevu.RandevuAlinanServis = (Branslar)Enum.Parse(typeof(Branslar), cmbServis.SelectedItem.ToString());
+            randevu.RandevuAlinanDoktor = (Doktor)cmbDoktorlar.SelectedItem;
+            randevu.RandevuSaati = randevuSaati;
+
+            _seciliHasta.HastaRandevuList.Add(randevu);
+            randevular.Add(randevu);
+            ListViewItem randevuItem = lstWKayıt.Items.Add($"{randevu.RandevuAlanHasta}");
+            randevuItem.SubItems.Add($"{randevu.RandevuAlinanServis}");
+            randevuItem.SubItems.Add($"{randevu.RandevuAlinanDoktor}");
+            randevuItem.SubItems.Add($"{randevu.RandevuSaati}");
+        }
     }
 }

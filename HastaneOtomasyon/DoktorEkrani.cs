@@ -35,28 +35,22 @@ namespace HastaneOtomasyon
                 doktor.Brans= (Branslar)Enum.Parse(typeof(Branslar), cbBrans.SelectedItem.ToString());
                 _doktor = doktor;
                 doktorlar.Add((Doktor)doktor);
-                
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             FormuTemizle();
             lstDoktorlar.Items.AddRange(doktorlar.ToArray());
         }
-
         private void DoktorEkrani_Load(object sender, EventArgs e)
         {
             cbBrans.Items.AddRange(Enum.GetNames(typeof(Branslar)));
             //cbHemsire.Items.AddRange(HemsireEkrani.hemsireler.ToArray());
         }
-
         private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstDoktorlar.SelectedItem == null) return;
-
 
             Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;
             txtAd.Text = seciliKisi.Ad;
@@ -69,8 +63,6 @@ namespace HastaneOtomasyon
             {
                 cbHemsire.Text = seciliKisi.Hemsire.ToString();
             }
-            
-            
         }
 
         private void FormuTemizle()
@@ -89,7 +81,6 @@ namespace HastaneOtomasyon
                     lstBox.Items.Clear();
                 else if (control is ComboBox cmbox)
                     cmbox.Text = "";
-
             }
         }
 
@@ -122,7 +113,6 @@ namespace HastaneOtomasyon
             FormuTemizle();
             lstDoktorlar.Items.AddRange(doktorlar.ToArray());
         }
-
         private void cbBrans_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbHemsire.Items.Clear();
@@ -130,21 +120,15 @@ namespace HastaneOtomasyon
             foreach (Hemsire hemsire in HemsireEkrani.hemsireler)
             {
                 if (seciliBrans == hemsire.Brans.ToString())
-                {
                     cbHemsire.Items.Add(hemsire);
-                }
-                
-                    
             }
         }
-
         private void cbHemsire_SelectedIndexChanged(object sender, EventArgs e)
         {
             var seciliHemsire = (Hemsire)cbHemsire.SelectedItem;
             seciliHemsire._atandiMi = true;
             _doktor.Hemsire = seciliHemsire;
             MessageBox.Show($"Doktor {_doktor.Ad} atanan hemsiresi : {_doktor.Hemsire}");
-            
         }
     }
 }

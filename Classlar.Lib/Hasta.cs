@@ -10,6 +10,10 @@ namespace Classlar.Lib
    public class Hasta:Kisi
     {
         private string _ad, _soyad, _telefon, _email, _tckn;
+        //private Randevu _hastaRandevu;
+        private List<Randevu> hastaRandevuList = new List<Randevu>();
+
+        public List<Randevu> HastaRandevuList { get=>this.hastaRandevuList; set => this.hastaRandevuList = value;}
 
         public override string Ad
         {

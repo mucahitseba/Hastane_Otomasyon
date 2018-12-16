@@ -34,7 +34,7 @@
             this.cmbServis = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button21 = new System.Windows.Forms.Button();
+            this.btnRandevu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lstWKayıt = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -101,15 +101,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Servis";
             // 
-            // button21
+            // btnRandevu
             // 
-            this.button21.Enabled = false;
-            this.button21.Location = new System.Drawing.Point(75, 262);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 3;
-            this.button21.Text = "Randevu Al";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnRandevu.Enabled = false;
+            this.btnRandevu.Location = new System.Drawing.Point(75, 262);
+            this.btnRandevu.Name = "btnRandevu";
+            this.btnRandevu.Size = new System.Drawing.Size(75, 23);
+            this.btnRandevu.TabIndex = 3;
+            this.btnRandevu.Text = "Randevu Al";
+            this.btnRandevu.UseVisualStyleBackColor = true;
+            this.btnRandevu.Click += new System.EventHandler(this.btnRandevu_Click);
             // 
             // panel3
             // 
@@ -159,7 +160,7 @@
             this.ClientSize = new System.Drawing.Size(772, 496);
             this.Controls.Add(this.lstWKayıt);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button21);
+            this.Controls.Add(this.btnRandevu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lstHastalar);
             this.Name = "RandevuEkrani";
@@ -174,7 +175,7 @@
         #endregion
         private System.Windows.Forms.ListBox lstHastalar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button btnRandevu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
