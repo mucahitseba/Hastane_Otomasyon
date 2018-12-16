@@ -42,6 +42,8 @@ namespace HastaneOtomasyon
                 hastaEkrani.Dock = DockStyle.Fill;
                 randevuEkrani.Close();
                 hastaEkrani.Show();
+                
+                
             }
         }
 

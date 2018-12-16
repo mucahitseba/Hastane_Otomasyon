@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classlar.Lib;
+using Newtonsoft.Json;
 
 namespace HastaneOtomasyon
 {
@@ -41,7 +43,7 @@ namespace HastaneOtomasyon
 
                 MessageBox.Show($"Hosgeldin {yeniPersonel.Ad} {yeniPersonel.Soyad}{yeniPersonel.Gorev}");
                 FormuTemizle();
-                lstKisiler.Items.AddRange(personeller.ToArray());
+                lstPersoneller.Items.AddRange(personeller.ToArray());
             }
             catch (Exception ex)
             {
@@ -51,13 +53,13 @@ namespace HastaneOtomasyon
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstPersoneller.SelectedItem == null) return;
 
-            Personel seciliKisi = (Personel)lstKisiler.SelectedItem;
+            Personel seciliKisi = (Personel)lstPersoneller.SelectedItem;
             personeller.Remove(seciliKisi);
 
             FormuTemizle();
-            lstKisiler.Items.AddRange(personeller.ToArray());
+            lstPersoneller.Items.AddRange(personeller.ToArray());
         }
         private void FormuTemizle()
         {
@@ -81,9 +83,9 @@ namespace HastaneOtomasyon
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            if (lstPersoneller.SelectedItem == null) return;
 
-            Personel seciliKisi = (Personel)lstKisiler.SelectedItem;
+            Personel seciliKisi = (Personel)lstPersoneller.SelectedItem;
 
             try
             {
@@ -100,7 +102,7 @@ namespace HastaneOtomasyon
             }
 
             FormuTemizle();
-            lstKisiler.Items.AddRange(personeller.ToArray());
+            lstPersoneller.Items.AddRange(personeller.ToArray());
         }
 
         private void txtAra_KeyUp(object sender, KeyEventArgs e)
@@ -112,15 +114,62 @@ namespace HastaneOtomasyon
 
             personeller.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
             FormuTemizle();
-            lstKisiler.Items.AddRange(aramalar.ToArray());
+            lstPersoneller.Items.AddRange(aramalar.ToArray());
         }
 
-        private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
+            dosyaAc.Title = "Bir JSON dosyası seçiniz";
+            dosyaAc.Filter = "(JSON Dosyası) | *.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.FileName = "Personeller.json";
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                    StreamReader reader = new StreamReader(dosya);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    dosya.Close();
+                    personeller = JsonConvert.DeserializeObject<List<Personel>>(dosyaIcerigi);
 
 
-            Personel seciliKisi = (Personel)lstKisiler.SelectedItem;
+                    MessageBox.Show($"{personeller.Count} kisi sisteme basariyla eklendi");
+                    lstPersoneller.Items.Clear();
+                    lstPersoneller.Items.AddRange(personeller.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata olustu: " + ex.Message);
+                }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
+            dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaKaydet.FileName = "Personeller.json";
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject(personeller));
+                writer.Close();
+                writer.Dispose();
+            }
+        }
+
+        private void lstPersoneller_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstPersoneller.SelectedItem == null) return;
+
+
+            Personel seciliKisi = (Personel)lstPersoneller.SelectedItem;
             txtAd.Text = seciliKisi.Ad;
             txtSoyad.Text = seciliKisi.Soyad;
             txtEmail.Text = seciliKisi.Email;

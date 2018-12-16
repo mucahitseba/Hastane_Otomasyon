@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classlar.Lib;
+using Newtonsoft.Json;
 
 namespace HastaneOtomasyon
 {
@@ -21,6 +23,7 @@ namespace HastaneOtomasyon
         Calısan _doktor = new Doktor();
 
         public static List<Doktor> doktorlar = new List<Doktor>();
+        List<Doktor> aramalar = new List<Doktor>();
         //Hemsire seciliHemsire;
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -129,6 +132,74 @@ namespace HastaneOtomasyon
             seciliHemsire._atandiMi = true;
             _doktor.Hemsire = seciliHemsire;
             MessageBox.Show($"Doktor {_doktor.Ad} atanan hemsiresi : {_doktor.Hemsire}");
+        }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (lstDoktorlar.SelectedItem == null) return;
+
+            Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;
+            doktorlar.Remove(seciliKisi);
+
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(doktorlar.ToArray());
+        }
+
+        private void txtAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            string ara = txtAra.Text.ToLower();
+            aramalar = new List<Doktor>();
+
+
+
+            doktorlar.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(aramalar.ToArray());
+        }
+
+        private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Bir JSON dosyası seçiniz";
+            dosyaAc.Filter = "(JSON Dosyası) | *.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.FileName = "Doktorlar.json";
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                    StreamReader reader = new StreamReader(dosya);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    dosya.Close();
+                    doktorlar = JsonConvert.DeserializeObject<List<Doktor>>(dosyaIcerigi);
+                    MessageBox.Show($"{doktorlar.Count} kisi sisteme basariyla eklendi");
+                    lstDoktorlar.Items.Clear();
+                    lstDoktorlar.Items.AddRange(doktorlar.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata olustu: " + ex.Message);
+                }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
+            dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaKaydet.FileName = "Doktorlar.json";
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject(doktorlar));
+                writer.Close();
+                writer.Dispose();
+            }
         }
     }
 }

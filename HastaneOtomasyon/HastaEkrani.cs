@@ -1,9 +1,11 @@
 ﻿using Classlar.Lib;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +24,11 @@ namespace HastaneOtomasyon
         {
 
         }
-        public static List<Kisi> hastalar = new List<Kisi>();
+        public static List<Hasta> hastalar = new List<Hasta>();
         List<Kisi> aramalar = new List<Kisi>();
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            Kisi yeniHasta = new Hasta();
+            Hasta yeniHasta = new Hasta();
             try
             {
                 yeniHasta.Ad = txtAd.Text;
@@ -115,11 +117,54 @@ namespace HastaneOtomasyon
         {
             if (lstHasta.SelectedItem == null) return;
 
-            Kisi seciliKisi = (Kisi)lstHasta.SelectedItem;
+            Hasta seciliKisi = (Hasta)lstHasta.SelectedItem;
             hastalar.Remove(seciliKisi);
 
             FormuTemizle();
             lstHasta.Items.AddRange(hastalar.ToArray());
+        }
+
+        private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Bir JSON dosyası seçiniz";
+            dosyaAc.Filter = "(JSON Dosyası) | *.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.FileName = "Kisiler.json";
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                    StreamReader reader = new StreamReader(dosya);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    dosya.Close();
+                    hastalar = JsonConvert.DeserializeObject<List<Hasta>>(dosyaIcerigi);
+                    MessageBox.Show($"{hastalar.Count} kisi sisteme basariyla eklendi");
+                    lstHasta.Items.Clear();
+                    lstHasta.Items.AddRange(hastalar.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata olustu: " + ex.Message);
+                }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
+            dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaKaydet.FileName = "hastalar.json";
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject(hastalar));
+                writer.Close();
+                writer.Dispose();
+            }
         }
     }
     }

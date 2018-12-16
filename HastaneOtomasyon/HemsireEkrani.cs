@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Classlar.Lib;
+using Newtonsoft.Json;
 
 namespace HastaneOtomasyon
 {
@@ -129,5 +131,52 @@ namespace HastaneOtomasyon
         {
             comboBox1.DataSource = Enum.GetValues(typeof(Branslar));
         }
+
+        private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Bir JSON dosyası seçiniz";
+            dosyaAc.Filter = "(JSON Dosyası) | *.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.FileName = "Hemsireler.json";
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                    StreamReader reader = new StreamReader(dosya);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    dosya.Close();
+                    hemsireler = JsonConvert.DeserializeObject<List<Hemsire>>(dosyaIcerigi);
+
+
+                    MessageBox.Show($"{hemsireler.Count} kisi sisteme basariyla eklendi");
+                    lstHemsire.Items.Clear();
+                    lstHemsire.Items.AddRange(hemsireler.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata olustu: " + ex.Message);
+                }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
+            dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaKaydet.FileName = "Hemsireler.json";
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject(hemsireler));
+                writer.Close();
+                writer.Dispose();
+            }
+        }
+
+        
     }
 }
