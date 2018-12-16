@@ -120,15 +120,14 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnKaydet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAGBSURBVGhD7ZlLSgQxFEV7Jm5EBFHEz/7cgChuxM+SRKci
-        KqgjvRfsyeP2S25VyijkwBnWqXqpVHrQq8FgMPjT7MIb+AK/FvYMNoUP/wzVzZay6RBceXWTpW02xG9s
-        m002GSJGWxP70dlDxGBrYl85a4gYa03sb3LyEDHUmtjPnDREjLQm9kvazA4UiP2SNrMDBWK/pM3sQIHY
-        L2mjIj21UZGe2qhIT21UpKc2KtJTGxXpqY2K9NRGRXpqoyI1vsNzeAS3fjyGF/ADqmtqtFGRkvdwD25i
-        Hz5AdW1JGxXJ5MpnD7/mAH5C1ci0UZFMbptaLqFqZNqoSCb3fC0nUDUybVQkkx9rLdtQNTJtVCTz3w/A
-        o7KWU6gamTYqkslzvpYrqBqZNiqSyR8pnvMlDuGfPEYpf6R4zm+CD/8I1bUlbVSkRr4JnvM8KvmxUu55
-        bpspK7/W5g2qUA9foc0dVLEeXkObHn9wKJ/gDpwEh7iFfIUqvqS8J1d+8sMPBoPB0qxW3++C0R64+54/
-        AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAYFJREFUaEPtmUtKBDEURXsmbkQEUcTP/tyAKG7Ez5JEpyIqqCO9F+zJ4/ZLblXK
+        KOTAGdapeqlUetCrwWAw+NPswhv4Ar8W9gw2hQ//DNXNlrLpEFx5dZOlbTbEb2ybTTYZIkZbE/vR2UPE
+        YGtiXzlriBhrTexvcvIQMdSa2M+cNESMtCb2S9rMDhSI/ZI2swMFYr+kzexAgdgvaaMiPbVRkZ7aqEhP
+        bVSkpzYq0lMbFempjYr01EZFemqjIjW+w3N4BLd+PIYX8AOqa2q0UZGS93APbmIfPkB1bUkbFcnkymcP
+        v+YAfkLVyLRRkUxum1ouoWpk2qhIJvd8LSdQNTJtVCSTH2st21A1Mm1UJPPfD8CjspZTqBqZNiqSyXO+
+        liuoGpk2KpLJHyme8yUO4Z88Ril/pHjOb4IP/wjVtSVtVKRGvgme8zwq+bFS7nlumykrv9bmDapQD1+h
+        zR1UsR5eQ5sef3Aon+AOnASHuIV8hSq+pLwnV37yww8Gg8HSrFbf74LRHrj7nj8AAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="dosyaAc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

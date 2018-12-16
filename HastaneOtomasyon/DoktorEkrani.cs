@@ -136,7 +136,7 @@ namespace HastaneOtomasyon
 
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSil_Click(object sender, EventArgs e)
         {
             if (lstDoktorlar.SelectedItem == null) return;
 

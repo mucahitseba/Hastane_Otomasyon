@@ -161,7 +161,13 @@ namespace HastaneOtomasyon
             {
                 FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
                 StreamWriter writer = new StreamWriter(file);
-                writer.Write(JsonConvert.SerializeObject(hastalar));
+                //writer.Write(JsonConvert.SerializeObject(hastalar));
+                writer.Write(JsonConvert.SerializeObject(hastalar.ToList(), Formatting.Indented,
+                    new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                    }
+                ));
                 writer.Close();
                 writer.Dispose();
             }
