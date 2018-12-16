@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace HastaneOtomasyon
 {
@@ -20,6 +23,7 @@ namespace HastaneOtomasyon
 
         private Hasta _seciliHasta;
         private Branslar _secilenServis;
+        private Doktor _seciliDoktor;
         int dakika, saat, i;
         int sayac = 0;
         public DateTime randevuSaati;
@@ -31,6 +35,7 @@ namespace HastaneOtomasyon
             cmbServis.DataSource = Enum.GetValues(typeof(Branslar));
             //cmbDoktorlar.Items.AddRange(DoktorEkrani.doktorlar.ToArray());
             lstHastalar.Items.AddRange(HastaEkrani.hastalar.ToArray());
+            cmbCikti.Items.AddRange(DoktorEkrani.doktorlar.ToArray());
             cmbServis.Enabled = false;
             cmbDoktorlar.Enabled = false;
             
@@ -40,13 +45,12 @@ namespace HastaneOtomasyon
                 {
                     Button btn = new Button();
                     btn.Name = "btn_" + (i * j).ToString();
-                    btn.Location = new System.Drawing.Point(50 * j + 20, i * 40 + 40);
-                    btn.Size = new System.Drawing.Size(50, 40);
+                    btn.Location = new Point(50 * j + 20, i * 40 + 40);
+                    btn.Size = new Size(50, 40);
                     btn.Click += new EventHandler(SeansSec);
                     seanslar.Add(btn);
                     this.panel3.Controls.Add(btn);
                     btn.Enabled = false;
-
                 }
             }
 
@@ -95,11 +99,37 @@ namespace HastaneOtomasyon
 
         private void cmbDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
+            _seciliDoktor = (Doktor)cmbDoktorlar.SelectedItem;
             foreach (Button btn in seanslar)
             {
                 btn.Enabled = true;
             }
             btnRandevu.Enabled = true;
+        }
+
+        private void cmbCikti_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _seciliDoktor = (Doktor)cmbCikti.SelectedItem;
+        }
+
+        private void btnCiktiAl_Click(object sender, EventArgs e)
+        {
+            List<Randevu> seciliDoktorRandevular = new List<Randevu>(); Document raporum = new Document();
+            PdfWriter.GetInstance(raporum, new FileStream("C:/Users/Oguz/Desktop/Raporum.pdf", FileMode.Create));
+            raporum.AddCreationDate();
+            if (raporum.IsOpen() == false)
+                raporum.Open();
+
+            foreach (Randevu randevu in randevular)
+            {
+                if (randevu.RandevuAlinanDoktor == _seciliDoktor)
+                {
+                    seciliDoktorRandevular.Add(randevu);
+                    raporum.Add(new Paragraph($"{randevu.RandevuAlinanDoktor}{randevu.RandevuAlinanDoktor.Brans}"));
+                    raporum.Add(new Paragraph($"{randevu.RandevuAlanHasta}{randevu.RandevuSaati}"));
+                }
+            }
+            raporum.Close();
         }
 
         private void btnRandevu_Click(object sender, EventArgs e)
@@ -123,9 +153,24 @@ namespace HastaneOtomasyon
                     }
                 }
 
-                if (!eslesmeVarmi)
-                    RandevuOlustur();
+                //if (!eslesmeVarmi)
+                //    RandevuOlustur();
             }
+
+            if (_seciliDoktor.DoktorRandevuList != null)
+            {
+                foreach (Randevu doktorRandevu in _seciliDoktor.DoktorRandevuList)
+                {
+                    if (doktorRandevu.RandevuSaati == randevuSaati)
+                    {
+                        MessageBox.Show($"{doktorRandevu.RandevuAlinanDoktor.Ad} bey'in {doktorRandevu.RandevuSaati}" +
+                                        $"seansında randevusu bulunduğundan bu seansı seçemezsiniz");
+                        eslesmeVarmi = true;
+                    }
+                }
+            }
+            if (!eslesmeVarmi)
+                RandevuOlustur();
         }
 
         private void RandevuOlustur()
@@ -137,6 +182,7 @@ namespace HastaneOtomasyon
             randevu.RandevuSaati = randevuSaati;
 
             _seciliHasta.HastaRandevuList.Add(randevu);
+            _seciliDoktor.DoktorRandevuList.Add(randevu);
             randevular.Add(randevu);
             ListViewItem randevuItem = lstWKayıt.Items.Add($"{randevu.RandevuAlanHasta}");
             randevuItem.SubItems.Add($"{randevu.RandevuAlinanServis}");

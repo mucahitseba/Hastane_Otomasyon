@@ -122,7 +122,7 @@ namespace HastaneOtomasyon
             string seciliBrans = (string)cbBrans.SelectedItem;
             foreach (Hemsire hemsire in HemsireEkrani.hemsireler)
             {
-                if (seciliBrans == hemsire.Brans.ToString())
+                if (seciliBrans == hemsire.Brans.ToString() && !(hemsire._atandiMi))
                     cbHemsire.Items.Add(hemsire);
             }
         }

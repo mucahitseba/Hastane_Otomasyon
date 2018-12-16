@@ -11,8 +11,14 @@ namespace Classlar.Lib
     {
         private Branslar _brans;
         private Hemsire _hemsire;
-
         private string _ad, _soyad, _telefon, _email, _tckn;
+        private List<Randevu> _doktorRandevuList = new List<Randevu>();
+
+        public List<Randevu> DoktorRandevuList
+        {
+            get => this._doktorRandevuList;
+            set => this._doktorRandevuList = value;
+        }
 
         public override Hemsire Hemsire { get=>this._hemsire; set=>this._hemsire = value; }
         public override Branslar Brans { get => this._brans; set => this._brans = value; }

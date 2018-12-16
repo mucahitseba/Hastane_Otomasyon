@@ -41,13 +41,16 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbCikti = new System.Windows.Forms.ComboBox();
+            this.btnCiktiAl = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstHastalar
             // 
             this.lstHastalar.FormattingEnabled = true;
-            this.lstHastalar.Location = new System.Drawing.Point(122, 43);
+            this.lstHastalar.Location = new System.Drawing.Point(122, 9);
             this.lstHastalar.Name = "lstHastalar";
             this.lstHastalar.Size = new System.Drawing.Size(153, 212);
             this.lstHastalar.TabIndex = 1;
@@ -60,7 +63,7 @@
             this.panel1.Controls.Add(this.cmbServis);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(349, 43);
+            this.panel1.Location = new System.Drawing.Point(349, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 60);
             this.panel1.TabIndex = 2;
@@ -104,8 +107,8 @@
             // btnRandevu
             // 
             this.btnRandevu.Enabled = false;
-            this.btnRandevu.Location = new System.Drawing.Point(122, 299);
-            this.btnRandevu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRandevu.Location = new System.Drawing.Point(122, 265);
+            this.btnRandevu.Margin = new System.Windows.Forms.Padding(2);
             this.btnRandevu.Name = "btnRandevu";
             this.btnRandevu.Size = new System.Drawing.Size(153, 32);
             this.btnRandevu.TabIndex = 3;
@@ -115,7 +118,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(349, 110);
+            this.panel3.Location = new System.Drawing.Point(349, 76);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(272, 268);
             this.panel3.TabIndex = 4;
@@ -127,9 +130,9 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader5});
-            this.lstWKayıt.Location = new System.Drawing.Point(122, 392);
+            this.lstWKayıt.Location = new System.Drawing.Point(122, 358);
             this.lstWKayıt.Name = "lstWKayıt";
-            this.lstWKayıt.Size = new System.Drawing.Size(500, 158);
+            this.lstWKayıt.Size = new System.Drawing.Size(500, 117);
             this.lstWKayıt.TabIndex = 5;
             this.lstWKayıt.UseCompatibleStateImageBehavior = false;
             this.lstWKayıt.View = System.Windows.Forms.View.Details;
@@ -154,12 +157,43 @@
             this.columnHeader5.Text = "Saat";
             this.columnHeader5.Width = 100;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(119, 493);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(253, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Randevularının çıktısı alınacak olan doktoru seçiniz :";
+            // 
+            // cmbCikti
+            // 
+            this.cmbCikti.FormattingEnabled = true;
+            this.cmbCikti.Location = new System.Drawing.Point(378, 490);
+            this.cmbCikti.Name = "cmbCikti";
+            this.cmbCikti.Size = new System.Drawing.Size(121, 21);
+            this.cmbCikti.TabIndex = 7;
+            this.cmbCikti.SelectedIndexChanged += new System.EventHandler(this.cmbCikti_SelectedIndexChanged);
+            // 
+            // btnCiktiAl
+            // 
+            this.btnCiktiAl.Location = new System.Drawing.Point(515, 488);
+            this.btnCiktiAl.Name = "btnCiktiAl";
+            this.btnCiktiAl.Size = new System.Drawing.Size(108, 23);
+            this.btnCiktiAl.TabIndex = 8;
+            this.btnCiktiAl.Text = "Çıktı Al";
+            this.btnCiktiAl.UseVisualStyleBackColor = true;
+            this.btnCiktiAl.Click += new System.EventHandler(this.btnCiktiAl_Click);
+            // 
             // RandevuEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 612);
+            this.Controls.Add(this.btnCiktiAl);
+            this.Controls.Add(this.cmbCikti);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lstWKayıt);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnRandevu);
@@ -171,6 +205,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -190,6 +225,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbCikti;
+        private System.Windows.Forms.Button btnCiktiAl;
     }
 }
 
