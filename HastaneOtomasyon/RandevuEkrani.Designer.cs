@@ -215,8 +215,8 @@
         private System.Windows.Forms.Button btnRandevu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
-		private System.Windows.Forms.Panel panel2;
+        
+		
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cmbServis;
         private System.Windows.Forms.ComboBox cmbDoktorlar;
